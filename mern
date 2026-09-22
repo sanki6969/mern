@@ -1,0 +1,310 @@
+pract 1
+
+p1.js
+
+
+// Console Output
+console.log("JavaScript Basics");
+
+// Variables
+let a = 10;
+let b = 5;
+
+// Arithmetic Operations
+console.log("Addition =", a + b);
+console.log("Subtraction =", a - b);
+console.log("Multiplication =", a * b);
+console.log("Division =", a / b);
+console.log("Modulus =", a % b);  
+
+let num1 = 20;
+let num2 = 10;
+
+// Operators
+console.log("num1 + num2 =", num1 + num2);
+console.log("num1 > num2 =", num1 > num2);
+console.log("num1 == num2 =", num1 == num2);
+
+// Control Statement (if-else)
+if (num1 > num2) {
+    console.log("num1 is greater than num2");
+} else {
+    console.log("num2 is greater than or equal to num1");
+}
+
+// Switch Statement
+let day = 3;
+
+switch(day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    default:
+        console.log("Invalid Day");
+}
+
+for(let i = 1; i <= 5; i++) {
+    console.log(`Iteration Number: ${i}`);
+}
+
+// Variables
+let name = "John";
+let age = 20;
+
+// Function
+function introduce(personName, personAge) {
+    return `My name is ${personName} and I am ${personAge} years old.`;
+}
+
+// Function Call
+console.log(introduce(name, age));
+
+let student = "Alice";
+let marks = 85;
+
+console.log(`Student Name: ${student}`);
+console.log(`Marks Obtained: ${marks}`);
+console.log(`${student} scored ${marks}% in the examination.`);
+
+let count = 1;
+
+while(count <= 5) {
+    console.log(`Count = ${count}`);
+    count++;
+}
+
+
+
+
+
+pract 2
+
+
+1.Function_with_parameters.js
+
+// Function Declaration
+function greet(name, age) {
+    
+    console.log("Hello " + name);
+    console.log("Age: " + age);
+}
+
+// Function Calls
+greet("Rahul", 21);
+greet("Priya", 20);
+
+
+
+
+2.Arrays_&_Objects_in_JavaScript.js
+
+// Array
+let fruits = ["Apple", "Mango", "Banana", "Orange"];
+
+console.log("Fruits List:");
+for(let fruit of fruits){
+    console.log(fruit);
+}
+
+// Object
+let student = {
+    name: "Rahul",
+    age: 20,
+    course: "B.Sc. Computer Science"
+};
+
+console.log("\nStudent Details:");
+console.log("Name:", student.name);
+console.log("Age:", student.age);
+console.log("Course:", student.course);
+
+
+
+3.Use_of_Arrow_Functions.js
+// Normal Function
+function add(a, b) {
+    return a + b;
+}
+
+console.log("Addition =", add(10, 20));
+
+// Arrow Function
+const multiply = (a, b) => a * b;
+
+console.log("Multiplication =", multiply(10, 20));
+
+
+
+
+
+4.Array_Methods_(map, filter, reduce).js
+
+let numbers = [10, 20, 30, 40, 50];
+
+// map()
+let doubled = numbers.map(num => num * 2);
+
+console.log("Doubled Array:");
+console.log(doubled);
+
+// filter()
+let greaterThan25 = numbers.filter(num => num > 25);
+
+console.log("\nNumbers Greater than 25:");
+console.log(greaterThan25);
+
+// reduce()
+let sum = numbers.reduce((total, num) => total + num, 0);
+
+console.log("\nSum of Elements:");
+console.log(sum);
+
+
+
+5.Manipulates_Objects_&_Displays_Output.js
+
+let employee = {
+    id: 101,
+    name: "Anita",
+    department: "IT",
+    salary: 45000
+};
+
+// Display Original Object
+console.log("Employee Details:");
+console.log(employee);
+
+// Update Salary
+employee.salary = 50000;
+
+// Add New Property
+employee.city = "Mumbai";
+
+// Delete Department
+delete employee.department;
+
+console.log("\nUpdated Employee Details:");
+console.log(employee);
+
+
+
+
+6.Combining_Functions, Arrays, and Objects.js
+
+// Array of Objects
+let students = [
+    {name: "Rahul", marks: 85},
+    {name: "Priya", marks: 92},
+    {name: "Amit", marks: 78},
+    {name: "Sneha", marks: 88}
+];
+
+// Function to Display Students
+function displayStudents(studentArray) {
+    console.log("Student Details:\n");
+
+    studentArray.forEach(student => {
+        console.log(`${student.name} scored ${student.marks} marks.`);
+    });
+}
+
+// Function to Calculate Average Marks
+function calculateAverage(studentArray) {
+
+    let total = studentArray.reduce((sum, student) => sum + student.marks, 0);
+
+    return total / studentArray.length;
+}
+
+// Function Calls
+displayStudents(students);
+
+console.log("\nAverage Marks:", calculateAverage(students));
+
+
+pact 6
+
+Step 1: Set Up Your Project Folder
+1.	Create a new folder on your desktop, e.g. express-practical
+2.	Open VS Code
+3.	Go to File → Open Folder and select express-practical
+4.	Open the built-in terminal: Terminal → New Terminal (or Ctrl + `)
+
+Step 2: Initialize the Node Project
+In the VS Code terminal, run:
+bash
+npm init -y
+This creates a package.json file with default settings.
+
+Step 3: Install Express
+bash
+npm install express
+This downloads Express into a node_modules folder and adds it as a dependency in package.json.
+
+Step 4: Create the Server File
+In VS Code, create a new file called index.js (click New File icon in Explorer).
+
+Step 5: Write the Server Code
+Paste this into index.js:
+javascript
+
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  console.log('Home route was accessed');
+  res.send('<h1>Welcome to my Express Server!</h1>');
+});
+
+app.get('/about', (req, res) => {
+  console.log('About route was accessed');
+  res.send('<h2>This is the About Page</h2>');
+});
+
+app.get('/api/data', (req, res) => {
+  console.log('API data route was accessed');
+  res.json({
+    name: 'Student',
+    course: 'Node.js and Express',
+    status: 'Learning Successful'
+  });
+});
+
+app.get('/contact', (req, res) => {
+  console.log('Contact route was accessed');
+  res.send('Contact us at: example@email.com');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running successfully on http://localhost:${PORT}`);
+});
+
+
+Step 6: Run the Server
+In the terminal, run:
+bash
+node index.js
+You should see this in the VS Code console/terminal:
+Server is running successfully on http://localhost:3000
+(Keep this terminal running — don't close it.)
+
+Step 7: Test Routes in the Browser
+Open your browser and visit each route one by one:
+URL	Expected Output
+http://localhost:3000/	"Welcome to my Express Server!"
+http://localhost:3000/about	"This is the About Page"
+http://localhost:3000/api/data	JSON object with name, course, status
+http://localhost:3000/contact	"Contact us at: example@email.com"
+
+
+
+
+
+
