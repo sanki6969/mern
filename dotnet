@@ -1,0 +1,30 @@
+inside the button code
+
+string Gender = "";
+if (RadioButton1.Checked)
+{
+    Gender = "Male";
+}
+else if (RadioButton2.Checked)
+{
+    Gender = "Female";
+}
+if (CheckBox1.Checked)
+{
+    Output.Text = "Student Name" +TextBox1.Text +
+        "<br>Gender:" + Gender +
+        "<br>Course:" +DropDownList1.SelectedValue+ 
+        "<br> date of Birth:"+ Calendar1.SelectedDate.ToShortDateString()+ 
+        "<br> Registration Successfull";
+}
+else
+{
+    Output.Text = "Please accept the terms and the conditions";
+}
+
+
+
+web config
+<appSettings>
+	<add key="ValidationSettings:UnobtrusiveValidationMode" value="None"/>
+</appSettings>
